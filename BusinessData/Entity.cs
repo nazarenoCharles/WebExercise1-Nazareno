@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BusinessData;
 
-namespace Domain
+namespace BusinessData
 {
     public class Entity
     {

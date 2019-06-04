@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Domain.Data;
+using BusinessData;
 
-namespace Domain.Data
+namespace BusinessData
 {
     public class Posts : Users 
     {
+        public int pID;
         string titleN;
         string postN;
         string commentN;
 
+        public int PostID
+        {
+            get { return PostID; }
+            set { pID = value; }
+        }
         public string UserTitleName
         {
             get { return UserTitleName; }
