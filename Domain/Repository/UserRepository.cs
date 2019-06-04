@@ -5,7 +5,7 @@ using BusinessData;
 
 namespace Domain.Repository
 {
-    public class UserRepository
+    public class IUserRepository : Users
     {
         List<Users> userlist = new List<Users>();
 

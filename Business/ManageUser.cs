@@ -42,6 +42,18 @@ namespace Business
             List<Users> userlist = new List<Users>();
             public Users UserProfile(int uID)
             {
+                Users nouser = new Users();
+                {
+                    uID = 0;
+                    userFirstName = "";
+                    userLastName = "";
+                    userAge = 0;
+                    userEmail = "";
+                    userBirthday = DateTime.Parse("");
+                    userGender = "";
+
+                    
+                }
                 foreach (var user in userlist)
                 {
                     if (entityID == uID)
@@ -49,6 +61,7 @@ namespace Business
                         return user;
                     }
                 }
+                return nouser;
 
             }
         }
