@@ -8,6 +8,7 @@ namespace BusinessData
     public class Posts : Users 
     {
         public int pID;
+        public IEnumerable<object> postlist;
         string titleN;
         string postN;
         string commentN;

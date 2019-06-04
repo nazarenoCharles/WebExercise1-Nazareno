@@ -16,8 +16,6 @@ namespace Business
             }
         }
 
-
-
         public class AddPost : Posts
         {
             BusinessData.Users NewUsers = new BusinessData.Users();
@@ -36,6 +34,7 @@ namespace Business
             }
 
         }
+
         class ShowPost : Posts
         {
             List<Posts> postlist = new List<Posts>();
@@ -43,10 +42,10 @@ namespace Business
             {
                 Posts posts = new Posts()
                 {
-                    PostID = 0,
-                    UserTitleName = "",
-                    UserPost = "",
-                    UserComment = "",
+                    PostID = 000000,
+                    UserTitleName = "Sample Title",
+                    UserPost = "I have created a sample post",
+                    UserComment = "pls sub 2 pewds",
                 };
 
                 foreach(var post in postlist)
@@ -59,8 +58,8 @@ namespace Business
                 }
                 return posts;
             }
-            
         }
+        
 
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using BusinessData;
 
@@ -42,16 +43,15 @@ namespace Business
             List<Users> userlist = new List<Users>();
             public Users UserProfile(int uID)
             {
-                Users nouser = new Users();
+                Users Getuser = new Users();
                 {
-                    uID = 0;
-                    userFirstName = "";
-                    userLastName = "";
-                    userAge = 0;
-                    userEmail = "";
-                    userBirthday = DateTime.Parse("");
-                    userGender = "";
-
+                    uID = 37010;
+                    userFirstName = "Charles";
+                    userLastName = "Nazareno";
+                    userAge = 21;
+                    userEmail = "friendflare456@gmail.com";
+                    userBirthday = DateTime.Parse("06/27/1996");
+                    userGender = "Female";
                     
                 }
                 foreach (var user in userlist)
@@ -61,8 +61,16 @@ namespace Business
                         return user;
                     }
                 }
-                return nouser;
-
+                return Getuser;
+            }
+        }
+        public void EditUser(Users users)
+        {
+            List<Users> userlist = new List<Users>();
+            foreach (var user in userlist)
+            {
+                var edit = userlist.FirstOrDefault(x => x.userFirstName == userFirstName);
+                if (edit != null) edit.userFirstName = userFirstName;
             }
         }
 
