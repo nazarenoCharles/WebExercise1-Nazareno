@@ -7,7 +7,9 @@ namespace BusinessData
 {
     public class Posts : Entity
     {
+        
         public int pID;
+        
         private string titleN;
         private string postN;
         private string commentN;
@@ -32,6 +34,8 @@ namespace BusinessData
             get { return UserComment; }
             set { commentN = value; }
         }
+
+        public string needChange { get; set; }
     }
 
 }
