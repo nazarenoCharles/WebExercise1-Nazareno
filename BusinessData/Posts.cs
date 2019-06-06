@@ -5,13 +5,12 @@ using BusinessData;
 
 namespace BusinessData
 {
-    public class Posts : Users 
+    public class Posts : Entity
     {
         public int pID;
-        public IEnumerable<object> postlist;
-        string titleN;
-        string postN;
-        string commentN;
+        private string titleN;
+        private string postN;
+        private string commentN;
 
         public int PostID
         {

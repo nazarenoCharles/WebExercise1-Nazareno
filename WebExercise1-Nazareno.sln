@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTest1-Nazareno", "WebTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{924FF68F-E207-4122-B30B-5CC694589870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{F54159C8-7668-428A-A577-20583D16791E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{F54159C8-7668-428A-A577-20583D16791E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessData", "BusinessData\BusinessData.csproj", "{1ABC96D7-B4B6-4929-9FE8-6336A4DDA2ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessData", "BusinessData\BusinessData.csproj", "{1ABC96D7-B4B6-4929-9FE8-6336A4DDA2ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{45D94481-EEE7-483F-A753-8A8F211A7E26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1ABC96D7-B4B6-4929-9FE8-6336A4DDA2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ABC96D7-B4B6-4929-9FE8-6336A4DDA2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ABC96D7-B4B6-4929-9FE8-6336A4DDA2ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45D94481-EEE7-483F-A753-8A8F211A7E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45D94481-EEE7-483F-A753-8A8F211A7E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45D94481-EEE7-483F-A753-8A8F211A7E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45D94481-EEE7-483F-A753-8A8F211A7E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
