@@ -31,7 +31,6 @@ namespace Business
         public void CreatePost(int pID, string titleN, string postN, string commentN)
         {
 
-
             postlist.Add(new Posts
             {
                 PostID = pID,
@@ -43,14 +42,6 @@ namespace Business
 
         public Posts Posted(int pID)
         {
-            Posts posts = new Posts()
-            {
-                PostID = 000000,
-                UserTitleName = "Sample Title",
-                UserPost = "I have created a sample post",
-                UserComment = "pls sub 2 pewds",
-            };
-
             foreach (var post in postlist)
             {
                 if (PostID == pID)
@@ -58,43 +49,45 @@ namespace Business
                     return post;
                 }
             }
-            return posts;
+            return Posts;
         }
+        
 
         public void EditPosts(int pID)
         {
+            MementoPost save = new MementoPost();
+            PostCaretaker savelist = new PostCaretaker();
+                
             postlist.FirstOrDefault(p => p.PostID == pID);
-
+            
+            
             foreach (var post in postlist)
             {
-                postlist.Where(x => x.UserTitleName == "Sample Edit")
+                save.UserTitlename = postlist.Where(x => x.UserTitleName == "Sample Edit")
                 .Select(x => { x.UserTitleName = UserTitleName; return x; }).ToList();
-                postlist.Where(x => x.UserPost == "Body of Edit")
+                save.UserPost = postlist.Where(x => x.UserPost == "Body of Edit")
                 .Select(x => { x.UserPost = UserPost; return x; }).ToList();
-                postlist.Where(x => x.UserComment == "Commented")
+                save.UserComment = postlist.Where(x => x.UserComment == "Commented")
                 .Select(x => { x.UserComment = UserComment; return x; }).ToList();
-
-                if (postlist == null)
+                
+                if (post.Updated())
                 {
                     
-                    Undo();
+                    show.Posted();
+                    show.Undo();
                 }
             }
         }
         public void Undo()
         {
-            MementoPost mememnto = new MementoPost();
             Posts posts = new Posts();
-
             foreach (var post in postlist)
             {
                 if (PostID == pID)
                 {
-                    
-                   
+                    Posted();
                 }
             }
-           
         }
         
 
