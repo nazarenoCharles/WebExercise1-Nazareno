@@ -6,15 +6,16 @@ using Business;
 
 namespace Business
 {
-    class MementoPost : ManageUser
+    class MementoPost : ManagePost
     {
         
         public class EditMemento 
             {
-
                 private string _titleN;
                 private string _postN;
                 private string _commentN;
+
+
                 //saving the state
                 public EditMemento SaveMemento()
                 {
@@ -39,7 +40,7 @@ namespace Business
                 }
 
 
-                public class Mementoproperty
+                public class PostCaretaker
                 {
                     private EditMemento _memento;
                     public EditMemento Memento
@@ -48,7 +49,15 @@ namespace Business
                         get { return _memento; }
                     }
                 }
+            public void RevertOriginal(string UserTitleName ,string UserPost )
+            {
+                UserTitleName = _titleN;
+
+
             }
+        }
+        
+        
         
                 
         

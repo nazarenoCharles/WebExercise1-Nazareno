@@ -25,7 +25,6 @@ namespace Business
         }
         public void RemoveData(int pID)
         {
-
             postlist.RemoveAll(x => x.PostID == pID);
         }
 
@@ -41,9 +40,9 @@ namespace Business
                 UserComment = commentN,
             });
         }
+
         public Posts Posted(int pID)
         {
-
             Posts posts = new Posts()
             {
                 PostID = 000000,
@@ -58,7 +57,6 @@ namespace Business
                 {
                     return post;
                 }
-
             }
             return posts;
         }
@@ -66,17 +64,19 @@ namespace Business
         public void EditPosts(int pID)
         {
             postlist.FirstOrDefault(p => p.PostID == pID);
+
             foreach (var post in postlist)
             {
-                postlist.Where(x => x.UserTitleName == "")
+                postlist.Where(x => x.UserTitleName == "Sample Edit")
                 .Select(x => { x.UserTitleName = UserTitleName; return x; }).ToList();
-                postlist.Where(x => x.UserPost == "")
+                postlist.Where(x => x.UserPost == "Body of Edit")
                 .Select(x => { x.UserPost = UserPost; return x; }).ToList();
-                postlist.Where(x => x.UserComment == "")
+                postlist.Where(x => x.UserComment == "Commented")
                 .Select(x => { x.UserComment = UserComment; return x; }).ToList();
 
-                if(postlist != null)
+                if (postlist == null)
                 {
+                    
                     Undo();
                 }
             }
@@ -84,7 +84,19 @@ namespace Business
         public void Undo()
         {
             MementoPost mememnto = new MementoPost();
+            Posts posts = new Posts();
+
+            foreach (var post in postlist)
+            {
+                if (PostID == pID)
+                {
+                    
+                   
+                }
+            }
+           
         }
+        
 
     }
 }

@@ -44,9 +44,7 @@ namespace Business
                 userBirthday = uBday,
                 userGender = gender
             });
-        }
-
-           
+        }           
             public void RemoveUser(int uID)
             {
                 userlist.RemoveAll(x => x.entityID == uID);
@@ -71,7 +69,6 @@ namespace Business
                 .Select(x => { x.userAge = userAge; return x; }).ToList();
             }
         }
-
 
     }
 }
