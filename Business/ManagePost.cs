@@ -3,41 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BusinessData;
+using Domain.Repository;
 
 
 namespace Business
 {
     public class ManagePost : Posts
     {
+
+        private static readonly ManagePost _instance = new ManagePost();
         List<Posts> postlist;
 
-        public ManagePost()
+        public static ManagePost ManagingPost()
         {
-            postlist.Add(new Posts
-            {
-                PostID = 1,
-                UserTitleName = "asdsadsa",
-                UserPost = "samp post",
-                UserComment = "commentN",
-
-            });
-
+            return _instance;
         }
+        public List<Posts> ShowPost()
+        {
+            return PostRepository.GetPostRepository().postlist;
+        }
+        public void AddPost(int pID, string titlename, string userp, string commented)
+        {
+            PostRepository.GetPostRepository().AddPostRepo(pID, titlename, userp, commented);
+        }
+
         public void RemoveData(int pID)
         {
             postlist.RemoveAll(x => x.PostID == pID);
-        }
-
-        public void CreatePost(int pID, string titleN, string postN, string commentN)
-        {
-
-            postlist.Add(new Posts
-            {
-                PostID = pID,
-                UserTitleName = titleN,
-                UserPost = postN,
-                UserComment = commentN,
-            });
         }
 
         public Posts Posted(int pID)
@@ -60,13 +52,6 @@ namespace Business
             return posts;
             
         }
-        
-
-        //public void EditPosts(int pID)
-        //{
-        //    postlist.Where(p => p.PostID == pID);
-
-        //}
         public Posts UpdatePost(Posts updatepost)
         {
             MementoPost save = new MementoPost();
@@ -92,6 +77,7 @@ namespace Business
             PostCaretaker savelist = new PostCaretaker();
             save.RestoreMemento(savelist.Memento);
         }
+
     }
 }
 
