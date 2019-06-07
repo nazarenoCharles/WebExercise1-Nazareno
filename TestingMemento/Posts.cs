@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BusinessData;
 
-namespace BusinessData
+
+namespace TestingMemento
 {
-    public class Posts : Entity
+    public class Posts
     {
-        
+
         public int pID;
-        
-        public string titleN;
-        public string postN;
-        public string commentN;
+
+        private string titleN;
+        private string postN;
+        private string commentN;
 
         public int PostID
         {
@@ -35,7 +35,13 @@ namespace BusinessData
             set { commentN = value; }
         }
 
+
         public string needChange { get; set; }
+
+        internal static void CreatePost(Posts newposts)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

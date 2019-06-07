@@ -62,27 +62,36 @@ namespace Business
         }
         
 
-        public void EditPosts(int pID)
+        //public void EditPosts(int pID)
+        //{
+        //    postlist.Where(p => p.PostID == pID);
+
+        //}
+        public Posts UpdatePost(Posts updatepost)
         {
             MementoPost save = new MementoPost();
             PostCaretaker savelist = new PostCaretaker();
-            postlist.FirstOrDefault(p => p.PostID == pID);
-            foreach (var post in postlist)
+            Posts post = postlist.FirstOrDefault(p => p.PostID == updatepost.pID); 
+
+            if (post != null)
             {
-                save.pID = postlist.Select(c => {c.needChange = PostID; return c; });
-                save.UserTitleName = postlist.Select(c => { c.needChange = UserTitleName; return c; });
-                save.UserPost = postlist.Where(x => x.UserPost == "Body of Edit").Select(x => { x.UserPost = UserPost; return x; }).ToList();
-                save.UserComment = postlist.Where(x => x.UserComment == "Commented").Select(x => { x.UserComment = UserComment; return x; }).ToList();
-                
-                if (post != null)
-                {
-                    save.RestoreMemento(savelist.Memento);
-                }
+                save.UserTitleName = post.titleN= updatepost.UserTitleName;
+                save.UserPost = post.postN = updatepost.UserPost;
+                save.UserComment = post.commentN = updatepost.UserComment;
             }
-            
+            else
+            {
+                postlist.Where(p => p.PostID == updatepost.pID);
+                Undo();
+            }
+            return post;
         }
-
-
+        public void Undo()
+        {
+            MementoPost save = new MementoPost();
+            PostCaretaker savelist = new PostCaretaker();
+            save.RestoreMemento(savelist.Memento);
+        }
     }
 }
 
